@@ -1,6 +1,6 @@
-
-import { getJSON, iterateNodes, renderTextareaCharacterCount } from "./utils.js";
-
+import { iterateNodes } from "./utils.js";
+import { getJSON } from "./callbacks/getJSON.js";
+import { renderTextareaCharacterCount } from "./callbacks/renderTextareaCharacterCount.js";
 export const CodelyBackoffice = {
     /*******************************************************************************************************************
      * Common features
