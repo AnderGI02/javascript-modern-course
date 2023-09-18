@@ -37,13 +37,13 @@ export const CodelyBackoffice = {
     /*******************************************************************************************************************
      * Filter courses by category
      ******************************************************************************************************************/
-    initCategoryFilter: function () {
-      var filter = document.getElementById("category");
+    initCategoryFilter() {
+      const filter = document.getElementById("category");
   
       filter.addEventListener("change", function () {
-        var category = this.value;
+        const category = this.value;
   
-        var elementsToFilter = document.querySelectorAll(".js-filtered-item");
+        const elementsToFilter = document.querySelectorAll(".js-filtered-item");
   
         iterateNodes(elementsToFilter, function (element) {
           if (category && category !== element.getAttribute("data-category")) {
