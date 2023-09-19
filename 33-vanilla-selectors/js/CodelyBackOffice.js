@@ -1,6 +1,7 @@
 import { iterateNodes } from "./utils.js";
 import { getJSON } from "./callbacks/getJSON.js";
 import { renderTextareaCharacterCount } from "./callbacks/renderTextareaCharacterCount.js";
+import { toggleClassListHidden } from "./callbacks/toggleClassListHidden.js";
 export const CodelyBackoffice = {
     /*******************************************************************************************************************
      * Common features
@@ -46,15 +47,8 @@ export const CodelyBackoffice = {
   
         //div para cada curso
         const elementsToFilter = document.querySelectorAll(".js-filtered-item");
-        const isElementsCategoryNotTheSame = () => category && category !== element.getAttribute("data-category");
 
-        iterateNodes(elementsToFilter, function (element) {
-          if (isElementsCategoryNotTheSame()) {
-            element.classList.add("hidden");
-          } else {
-            element.classList.remove("hidden");
-          }
-        });
+        iterateNodes(elementsToFilter, toggleClassListHidden);
       });
     },
     /*******************************************************************************************************************
